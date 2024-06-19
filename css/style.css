@@ -1,0 +1,84 @@
+.bi {
+	vertical-align: -.125em;
+	fill: currentColor;
+  }
+
+  .bd-mode-toggle {
+	z-index: 1500;
+  }
+
+  .bd-mode-toggle .dropdown-menu .active .bi {
+	display: block !important;
+  }
+
+.man{
+  margin: 0px 50px 15px 0px;
+  border: transparent;
+  border-radius: 20px;
+}
+
+.girl{
+  margin: 0px 0px 15px 0px;
+  border: transparent;
+  border-radius: 20px;
+}
+
+.iemece-1{
+  margin: 2px 10px 15px 0px;
+  border: transparent;
+  border-radius: 20px;
+}
+
+.iemece-2{
+  margin: 2px 0px 15px 0px;
+  border: transparent;
+  border-radius: 20px;
+}
+
+.presion-ar{
+  margin: 2px 0px 15px 0px;
+  border: transparent;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.bajo-p{
+  background-color: #F8A861;
+}
+
+.p-normal{
+  background-color: #92D14B;
+}
+
+.sobre-p{
+  background-color: #E56B10;
+}
+
+.obed-1{
+  background-color: #E6110C;
+}
+
+.obed-2{
+  background-color: #D21112;
+}
+.obed-3{
+  background-color: #C00507;
+}
+.obed-4{
+  background-color: #B30205;
+}
+
+.p-baja{
+  background-color: #4AC3B4;
+}
+
+.fase-1{
+  background-color: #F5797F;
+}
+
+.fase-2{
+  background-color: #EE5A6A;
+}
+.pp-normal{
+  background-color: #7CB869;
+}

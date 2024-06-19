@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <script src="js/color-modes.js"></script>
+    <!-- Metadatos -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Apps for JavaScript</title>
+    <link rel="icon" href="img/logo.png">
+    
+    <!---Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Iconos Boostrapt 1.11.3 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--  Styles for Dashboard -->
+    <link href="css/dashboard.css" rel="stylesheet">
+    <!--Styles-->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!--iconos cambio Claro / Oscuro-->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+    <!--Fin Iconos Cambio Claro / Oscuro-->
+
+    <!---Boton de Cambio a Claro / Oscuro-->
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Claro
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Oscuro
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <!--fin de iconos cambio Claro / Oscuro-->
+
+    <!--Header-->
+    <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#"><img src="img/logo.png" width="48px"></a>
+
+      <ul class="navbar-nav flex-row d-md-none">
+        <li class="nav-item text-nowrap">
+          <button class="nav-link px-3 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search">
+            <i class="bi bi-search"></i>
+          </button>
+        </li>
+        <li class="nav-item text-nowrap">
+          <button class="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </li>
+      </ul>
+      <div id="navbarSearch" class="navbar-search w-100 collapse">
+        <input class="form-control w-100 rounded-0 border-0" type="text" placeholder="Buscar.." aria-label="Search">
+      </div>
+    </header>
+    <!--Fin Header-->
+
+    <!--Contenedor Fluido-->
+    <div class="container-fluid">
+      <div class="row">
+        <!--Sidebar-->
+        <div class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
+          <div class="offcanvas-md offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="sidebarMenuLabel"><img src="img/logo.png"></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
+            </div>
+            <!--Navbar Vertical-->
+            <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
+              <ul class="nav flex-column vh-100">
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
+                  <img src="img/apps.png">
+                    Aplicaciones Js
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#app_js_1">
+                    <img src="img/edad.png">
+                    App 1 - Calculadora de Edad
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#app_js_2">
+                    <img src="img/peso.png">
+                    App 2 - Calculadora de Peso y Altura
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#app_js_3">
+                    <img src="img/ims.png">
+                    App 3 - Calculadora IMC
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#app_js_4">
+                    <img src="img/presion.png">
+                    App 4 - Calculadora de Presion Arterial
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-flex align-items-center gap-2" href="#form_PesoIdeal">
+                    <img src="img/peso-saludable.png">
+                    App 5 - Calculadora de Peso Ideal App
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!--Fin Navbar Vertical-->
+          </div>
+        </div>
+        <!---Fin Sidebar-->
+
+        <!--Contenido Principal App Main-->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <!--Titulo-->
+          <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Apps JavaScript &nbsp;</h1><img src="img/java.png" width="40px">
+          </div>
+          <!-- Contenedor -->
+          <div class="container  ">
+            <!--Row1 Formulario 1-->
+            <div id="app_js_1" class="row d-flex justify-content-center align-items-center">
+              <div class="col-md-10 py-5">
+                  <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                    <div class="d-flex justify-content-around py-4 bg-body-secondary border rounded-4 mb-5">
+                      <h1 class="h3"><img src="img/edad.png">&nbsp;App 1 - Calculadora de Edad</h1>
+                      <!-- Vertically centered modal -->
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Info &nbsp;<i class="bi bi-info-circle"></i>
+                      </button>
+                      <!-- Modal -->
+                      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="staticBackdropLabel">App 1 - Calculadora de Edad</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              Diseñar un algoritmo que identifique si una persona es niño, joven, adulto o adulto mayor.
+                              Para lo cual debe leer su edad.
+                              Si la edad es menor o igual a 12 años, el algoritmo debe indicar "Eres un niño"
+                              Si la edad es mayor a 12 años y menor o igual a 40 años, el algoritmo debe indicar "Eres
+                              un joven"
+                              Si la edad es mayor a 40 años y menor o igual a 60 años, el algoritmo debe indicar "Eres
+                              un adulto"
+                              Si la edad es mayor a 60 años el algoritmo debe indicar "Eres un adulto mayor"
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="number" class="form-control" id="edad" placeholder="Edad">
+                      <label for="floatingInput">Calcular Edad (Años)</label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="button"  onclick="edad_promedio()">Calcular</button>
+                    <hr class="my-4">
+                    <p id="resultado1" class="mt-3"></p>
+                  </form>
+              </div>
+            </div>
+            <!--Fin Row1 Formulario 1--> 
+
+            <!--Row2 Formulario 2-->
+            <div id="app_js_2" class="row d-flex justify-content-center align-items-center">
+              <div class="col-md-10 py-5">
+                  <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                    <div class="d-flex justify-content-around py-4 bg-body-secondary border rounded-4 mb-5">
+                      <h1 class="h3"><img src="img/peso.png">&nbsp;App 2 - Calculadora de Peso y Altura</h1>
+                      <!-- Vertically centered modal -->
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                        Info &nbsp;<i class="bi bi-info-circle"></i>
+                      </button>
+                      <!-- Modal -->
+                      <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="staticBackdropLabel2">App 2 - Calculadora de Peso y Altura</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <p>Diseñe un algoritmo que simule la siguiente tabla:</p>
+                              <img src="img/hombre.JPG" class="man"><img src="img/mujer.JPG" class="girl">
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <select class="form-select" id="sexo"  required>
+                        <option value="">Seleccione su sexo ( Hombre / Mujer )</option>
+                        <option value="hombre">Hombre</option>
+                        <option value="mujer">Mujer</option>
+                      </select>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="number" class="form-control" id="edad2" placeholder="Edad">
+                      <label for="edad2">Edad (Años)</label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="button" onclick="peso_altura()">Calcular</button>
+                    <hr class="my-4">
+                    <p id="resultado2" class="mt-3"></p>
+                  </form>
+              </div>
+            </div>
+            <!--Fin Row2 Formulario 2-->
+            <!--Row3 Formulario 3-->
+            <div id="app_js_3" class="row  d-flex justify-content-center align-items-center">
+              <div class="col-md-10 py-5">
+                  <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                    <div class="d-flex justify-content-around py-4 bg-body-secondary border rounded-4 mb-5">
+                      <h1 class="h3"><img src="img/ims.png">&nbsp;App 3 - Calculadora IMC</h1>
+                      <!-- Vertically centered modal -->
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
+                        Info &nbsp;<i class="bi bi-info-circle"></i>
+                      </button>
+                      <!-- Modal -->
+                      <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="staticBackdropLabel3">App 3 - Calculadora IMC</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <p>Diseñe un algoritmo que simule la siguiente gráfica:</p>
+                              <img src="img/imc-1.JPG" class="iemece-1"><img src="img/imc-2.JPG" class="iemece-2">
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="number" step="0.01" class="form-control" id="peso" placeholder="Peso">
+                      <label for="floatingInput">Peso (Kilos)</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="number" step="0.01" class="form-control" id="estatura" placeholder="Estatura">
+                      <label for="floatingPassword">Estatura (Centimetros)</label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="button"  onclick="calcular_indice()">Calcular</button>
+                    <hr class="my-4">
+                    <p id="resultado3" class="mt-3"></p>
+                  </form>
+              </div>
+            </div>
+            <!--Fin Row3 Formulario 3-->
+            <!--Row4 Formulario 4-->
+            <div id="app_js_4" class="row d-flex justify-content-center align-items-center">
+              <div class="col-md-10 py-5">
+                  <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                    <div class="d-flex justify-content-around py-4 bg-body-secondary border rounded-4 mb-5">
+                      <h1 class="h3"><img src="img/presion.png">&nbsp;App 4 - Calculadora de Presion Arterial</h1>
+                      <!-- Vertically centered modal -->
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop4">
+                        Info &nbsp;<i class="bi bi-info-circle"></i>
+                      </button>
+                      <!-- Modal -->
+                      <div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel4" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="staticBackdropLabel4">App 4 - Calculadora de Presion Arterial</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <p>Diseñe un algoritmo que simule la siguiente grafica:</p>
+                              <img src="img/presion-ar.JPG" class="presion-ar">
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="number" class="form-control" id="presion" placeholder="Presión">
+                      <label for="floatingInput">Presión (P)</label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="button"  onclick="presion_arterial()">Calcular</button>
+                    <hr class="my-4">
+                    <p id="resultado4" class="mt-3"></p>
+                  </form>
+              </div>
+              <div class="card mt-4 bg-body-tertiary col-md-10 py-5">
+                <div class="d-flex justify-content-around mt-4">
+                  <h1 class="h3 text-center"><img src="img/peso-saludable.png">&nbsp;App 5 - Calculadora de Peso Ideal</h1>
+                  <!-- Vertically centered modal -->
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop5">
+                    Info &nbsp;<i class="bi bi-info-circle"></i>
+                  </button>
+                  <!-- Modal -->
+                  <div class="modal fade" id="staticBackdrop5" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel5" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="staticBackdropLabel5">App 5 - Calculadora de Peso Ideal</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body ">
+                          <p> Esta app te permite calcular tu Índice de Masa Corporal (IMC) de manera rápida y sencilla. El IMC es una medida importante que te ayuda a evaluar tu peso en relación con tu altura, proporcionándote una indicación general de tu composición corporal.
+                          ¿Cómo funciona?
+                          Ingresa tus datos: Simplemente introduce tu peso en kilogramos y tu altura en metros o centímetros.
+                          Obtén tu IMC:<br> Nuestra aplicación realizará el cálculo automáticamente utilizando la fórmula estándar IMC = peso / altura^2.
+                          Interpreta los resultados: Verás tu IMC expresado como un número y sabrás en qué categoría te encuentras según las pautas de salud:<br>
+                          <span class="badge text-bg-info">• Bajo peso: IMC por debajo de 18.5</span><br>
+                          <span class="badge text-bg-success">• Normal: IMC entre 18.5 y 24.9</span><br>
+                          <span class="badge text-bg-warning">• Sobrepeso: IMC entre 25 y 29.9</span><br>
+                          <span class="badge text-bg-danger">• Obesidad I: IMC entre 30 y 34.9</span><br>
+                          <span class="badge text-bg-danger">• Obesidad II: IMC entre 35 y 39.9</span><br>
+                          <span class="badge text-bg-danger">• Obesidad III: IMC entre 40 y 49.9</span><br>
+                          <span class="badge text-bg-danger">• Obesidad IV: IMC de 50 hasta más.</span><br></p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <form id="form_PesoIdeal">
+                    <div class="mb-3">
+                      <label for="sex" class="form-label">Sexo ( Hombre / Mujer )</label>
+                      <select class="form-select" id="sex" required>
+                        <option value="">Seleccione su sexo</option>
+                        <option value="hombre">Hombre</option>
+                        <option value="mujer">Mujer</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="ed" class="form-label">Edad (Años)</label>
+                      <input type="number" class="form-control" id="ed" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="pesoActual" class="form-label">Peso actual (kilos)</label>
+                      <input type="number" class="form-control" step="0.1" id="pesoActual" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="est" class="form-label">Altura (centimetros)</label>
+                      <input type="number" class="form-control" id="est" step="0.1" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" >Calcular Peso Ideal</button>
+                    <hr class="my-4">
+                    <div class="mt-4" id="resultado"></div>
+                  </form>
+                </div>
+              </div>
+              <!--Fin Row5 Formulario 5--> 
+            </div>
+            <!--Fin Row4 Formulario 4-->
+            <!--Row5 Formulario 5-->
+          </div>
+          <!--Fin Contenedor-->
+        </main>
+        <!-- Fin contenido Principal -->
+      </div>
+    </div>
+    <!--Fin Contenedor Fluido-->
+    <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+      <!-- Section: Social media -->
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <!-- Left -->
+        <!-- Left -->
+        <!-- Right -->
+        <!-- Right -->
+      </section>
+      <!-- Section: Social media -->
+      <!-- Section: Links  -->
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 text-center">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold mb-2">
+                PROYECT-09 APPLICATIONS CREATED WITH JAVASCRIPT
+              </h6>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Section: Links  -->
+      <!-- Copyright -->
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 Ing. Juan Hernandez - ADSO 2827621
+      </div>
+      <!-- Copyright -->
+    </footer>
+    
+    <!---Boostrap 5.3 JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!--Dashboard JS-->
+    <script src="js/dashboard.js"></script>
+    <script src="js/color-modes.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+
+</html>
